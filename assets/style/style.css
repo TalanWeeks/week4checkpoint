@@ -1,1 +1,5 @@
 /* BASIC STYLES HERE */
+.custom-bg{
+  background-size: cover;
+  background-repeat: no-repeat;
+}

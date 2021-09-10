@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import { apiService } from "../Services/ApiService.js";
 import { valuesService } from "../Services/ValuesService.js";
 
 
@@ -22,6 +23,7 @@ export class ValuesController {
   constructor() {
     ProxyState.on("values", _draw);
     _draw()
+    
   }
 
   addValue() {
