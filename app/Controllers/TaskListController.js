@@ -2,6 +2,7 @@ import { ProxyState } from "../AppState.js";
 import { taskListService } from "../Services/TaskListService.js";
 
 function _drawTaskList(){
+  debugger
   let tasks = ProxyState.tasks;
   let taskTemplate = ''
   tasks.forEach(task => taskTemplate += task.taskTemplate)
@@ -24,9 +25,10 @@ export class  TaskListController{
       complete: false     
       
     }
-  taskListService.addTask(taskData)
-  _drawTaskList()  
-  //@ts-ignore    
+    taskListService.addTask(taskData)
+    //@ts-ignore    
+    form.reset() 
+    _drawTaskList() 
 }
 
 
