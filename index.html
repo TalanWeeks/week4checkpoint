@@ -21,8 +21,17 @@
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+        <div class="col-12 text-light d-flex justify-content-center ">
+          <form onsubmit="app.taskListController.createTask()">
+          <div class="card shadow bg-secondary m-2 p-2">
+            <div class="card-header">
+              <h4 class="my-2"for="task-list">Add To List</><br>
+            </div>
+            <input type="text" name= "description" placeholder="" minlength="1" maxlength="35" required><br>
+            <button type="submit" class="btn btn-dark btn-outline">Add Task</button>
+          </form>
+          <div id="task"></div>
+            </div>
         </div>
       </div>
     </div>
