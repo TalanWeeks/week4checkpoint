@@ -18,7 +18,7 @@ export class Task{
       <input type="checkbox" id="completed" class="completed" value='false' ${this.completed ? "completed" : ""} onclick="app.tasksController.checkTasks('${this.taskId}')"></input>
       <label class="p-2 task-slasher"for="task" id="task-slasher">${this.description}</label>
       <i class="mdi mdi-delete mdi-16px text-danger selectable"
-      onclick="app.tasksController.deleteTask('${this.taskId}')"></i>
+      onclick="app.taskListController.removeTask('${this._id}')"></i>
     </div>
     `
   }
