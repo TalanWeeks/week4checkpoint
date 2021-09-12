@@ -11,7 +11,7 @@ class AppState extends EventEmitter {
 
   sandboxTasks = []
 
-  checkedTask = []
+  checkedTasks = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {

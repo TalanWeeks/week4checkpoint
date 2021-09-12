@@ -25,10 +25,11 @@
           <form onsubmit="app.taskListController.createTask()">
           <div class="card shadow gradient-custom m-2 p-4">
             <div class="card-header">
-              <h4 class="my-2"for="task-list">Add To List</><br>
+              <h4 class="my-2 text-center"for="task-list">Add To List</><br>
             </div>
             <input type="text" name= "description" placeholder="" minlength="1" maxlength="35" required><br>
             <button type="submit" class="btn btn-dark btn-outline">Add Task</button>
+            <h5 class="text-center my-2"> Tasks Completed:<h5 class ="text-center"id="checked-vs-not"></h5></h5>
           </form>
           <div id="task"></div>
             </div>

@@ -8,6 +8,7 @@ function _drawTaskList(){
   let taskTemplate = ''
   tasks.forEach(task => taskTemplate += task.taskTemplate)
   document.getElementById("task").innerHTML= taskTemplate
+  taskListService.checkedVsUnchecked()
 }
 export class  TaskListController{
 
@@ -15,6 +16,7 @@ export class  TaskListController{
     
     ProxyState.on('tasks',_drawTaskList)
     taskListService.getMyTasks()
+    
     // _drawTaskList()
   }
 
