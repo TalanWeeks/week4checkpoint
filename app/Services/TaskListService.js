@@ -38,13 +38,13 @@ class TaskListService{
     console.log("after filter",ProxyState.tasks);      
     }
 
-    checkTasks(taskData){
-
-      console.log("hello from checked or not")
-      taskData.checked = true
-      let checkedTasks=[]
-      checkedTasks = ProxyState.tasks.filter(task => task.checked == true)  
-      console.log(checkedTasks)  
+    async checkTasks(taskId){  
+      console.log('the task id',taskId)
+      const task = ProxyState.tasks.find(t => t._id === taskId)
+      console.log("task after found id",task)
+      task.completed =! task.completed
+      console.log('your completed task mi lord0',task)
+      await sandboxApi.put(`${taskId}`,task)
     }
 }
 

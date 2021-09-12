@@ -7,7 +7,6 @@ function _drawTaskList(){
   let taskTemplate = ''
   tasks.forEach(task => taskTemplate += task.taskTemplate)
   document.getElementById("task").innerHTML= taskTemplate
-  console.log("i tried to draw already")
 }
 export class  TaskListController{
 
@@ -32,7 +31,7 @@ export class  TaskListController{
       id: listId,
       //@ts-ignore
       description: form.description.value,
-      complete: false     
+      completed: false 
       
     }
     taskListService.addTask(taskData)
@@ -41,15 +40,15 @@ export class  TaskListController{
     _drawTaskList() 
 }
   removeTask(id) { 
-//@ts-ignore
-swal({
-  title: "Are you sure?",
-  text: "Once deleted, you will not be able to recover this task!",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-})
-.then((willDelete) => {
+  //@ts-ignore
+    swal({
+    title: "Are you sure?",
+    text: "Once deleted, you will not be able to recover this task!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+    })
+    .then((willDelete) => {
   if (willDelete) {
     taskListService.removeTask(id)
 //@ts-ignore
@@ -57,11 +56,13 @@ swal({
       icon: "success",
     });
   } else {
+//@ts-ignore
     swal("Your task is safe!");
   }
-})
+    })
+  }
 
+  checkTasks(taskId){
+    taskListService.checkTasks(taskId)}
 
-
-}
 }
