@@ -19,7 +19,8 @@ class TaskListService{
   async getMyTasks() {
     let res = await sandboxApi.get('')    
     ProxyState.tasks = res.data.map(s => new Task(s))  
-    ProxyState.checkedTasks = ProxyState.tasks.filter((tasks) => {return tasks.completed == true})    
+    ProxyState.checkedTasks = ProxyState.tasks.filter((tasks) => {return tasks.completed == true})   
+    this.checkedVsUnchecked() 
   }
 
   async removeTask(id) {
@@ -32,6 +33,9 @@ class TaskListService{
     }
     ProxyState.tasks = ProxyState.tasks.filter(t => t._id !== id)
     // this.getMyTasks()
+    ProxyState.checkedTasks = ProxyState.tasks.filter((tasks) => {return tasks.completed == true})
+
+    this.checkedVsUnchecked()
           
     }
 
