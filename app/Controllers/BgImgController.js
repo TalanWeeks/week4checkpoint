@@ -3,10 +3,8 @@ import { apiService } from "../Services/ApiService.js";
 
 export class BgImgController{
   
-  _drawBgImg(){
-    
+  _drawBgImg(){    
     document.getElementById("bg-img").style.backgroundImage = `url('${ProxyState.img}')`
-
   }
   constructor(){
     apiService.getImgData()

@@ -19,7 +19,20 @@
   
   </header>
   <main>
+    <!-- CURRENT TIME SECTION -->
     <div class="container-fluid">
+        
+    <div class="row mt-5">
+      <div class="col-12 d-flex justify-content-center text-success">
+        <h1 id = "current-date"></h1>        
+      </div>
+    </div>
+    <div class="row mt-1 mb-5">
+      <div class="col-12 d-flex justify-content-center text-success">
+        <h1 id = "current-time"></h1>        
+      </div>
+    </div>
+    <!-- TASK LIST SECTION -->
       <div class="row">
         <div class="col-12 text-light d-flex justify-content-center ">
           <form onsubmit="app.taskListController.createTask()">
@@ -35,8 +48,7 @@
             </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
   <footer class="bg-dark text-light">
 
   </footer>
