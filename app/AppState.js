@@ -12,6 +12,8 @@ class AppState extends EventEmitter {
   checkedTasks = []
 
   weather = []
+
+  quote = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {

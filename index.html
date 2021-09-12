@@ -63,6 +63,7 @@
         <h1 id = "current-time"></h1>        
       </div>
     </div>
+
     <!-- TASK LIST SECTION -->
       <div class="row">
         <div class="col-12 text-light d-flex justify-content-center p-0">
@@ -76,18 +77,25 @@
           </form>
             </div>
         </div>
-        <div class="row justify-content-end m-0 p-0 text-light">
+
+      <!-- QUOTE SECTION -->
+        <div class="row justify-content-between m-0 p-0 text-light">
           <div class="col-lg-3 p-0">
-            <div class="card shadow gradient-custom m-0 p-2 ">
-              <h2></h2>
+            <div class="card shadow gradient-custom m-0 p-0 selectable " onmouseover="app.quoteController.showAuthor()">
+                <ul>
+                   <h4>Quote of the Day:<h6>(hover to see who said it)</h6></h4>
+                   <br><li title = "${this.author}" id = "quote"></li><br>
+                    <h6>Author: <span class = "visually-hidden" id = "author"> </span></h6>
+                </ul>
             </div>
           </div>
+        <!-- TASKS -->
           <div class="col-lg-3 p-0">
             <div class="card shadow gradient-custom m-0 p-2 ">
               <div class="card-header">
                 <h5 class="text-center my-2"> Tasks Completed:<h5 class ="text-center"id="checked-vs-not"></h5></h5>
               </div>
-              <div class="card-body scrollable-y" style="max-height: 20vh;">
+              <div class="card-body scrollable-y" style="max-height: 15vh;">
                 <div id="task"></div>
               </div>
             </div>
