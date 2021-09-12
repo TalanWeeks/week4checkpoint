@@ -4,7 +4,7 @@ import { generateId } from "../Utils/generateId.js"
 export class Task{
   constructor(taskData){
     this.user = taskData.user || "talan"
-    this._id = taskData._id
+    this._id = taskData._id || generateId()
     this.taskId = generateId()
     this.completed = taskData.completed || false 
     this.description =  taskData.description

@@ -30,12 +30,21 @@ class TaskListService{
    
     try {
       await sandboxApi.delete(id)      
-      ProxyState.tasks = ProxyState.tasks.filter(t => t._id !== id)
-      console.log("after filter",ProxyState.tasks);
     } catch (error) {
       console.log("delete failed",error);
     }
-      
+    ProxyState.tasks = ProxyState.tasks.filter(t => t._id !== id)
+    // this.getMyTasks()
+    console.log("after filter",ProxyState.tasks);      
+    }
+
+    checkTasks(taskData){
+
+      console.log("hello from checked or not")
+      taskData.checked = true
+      let checkedTasks=[]
+      checkedTasks = ProxyState.tasks.filter(task => task.checked == true)  
+      console.log(checkedTasks)  
     }
 }
 
