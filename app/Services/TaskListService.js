@@ -8,9 +8,7 @@ const sandboxApi = axios.create({
 })
 class TaskListService{
 
-  constructor(){
-  this.getMyTasks()
-  }
+ 
   async addTask(taskData){
     console.log('this is your task data',taskData)
     ProxyState.tasks = [...ProxyState.tasks, new Task(taskData)]

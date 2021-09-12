@@ -14,7 +14,9 @@ export class Weather{
     
   }
 
-  // get weatherTemplate(){
-
-  // }
+  get weatherTemplate(){
+    return /*html*/`
+    
+    `
+  }
 }

@@ -23,14 +23,30 @@
     
     <!-- WEATHER SECTION -->
     <div class="row justify-content-end mt-0 text-light">
-      <div class="col-lg-3">
-        <div class="card shadow gradient-custom  p-4 ">
+      <div class="col-lg-2 p-0">
+        <div class="card shadow gradient-custom  p-2 ">
           <div class="card-header">
             <h3>Boise Weather:</h3>
           </div>
-          <div class="card-body scrollable-y" style="max-height: 35vh;">
-            <div id="weather"></div>
+          <div class="card-body scrollable-y p-1" style="max-height: 30vh;">
+            <div id="weather-fahr">
+              <ul>
+                <li>current temp:<span id = "current-temp"></span></li>
+                <li>feels like:<span id = "temp-feels"></span></li>
+                <li>current High:<span id = "temp-high"></span></li>
+                <li>current Low:<span id = "temp-low"></span></li>              
+              </ul>
+            </div>
+            <div class = "visually-hidden" id = "weather-celsius">
+              <ul>
+                <li>current temp:<span id = "current-temp-celsius"></span></li>
+                <li>feels like:<span id = "temp-feels-celsius"></span></li>
+                <li>current High:<span id = "temp-high-celsius"></span></li>
+                <li>current Low:<span id = "temp-low-celsius"></span></li>              
+              </ul>
+            </div>
           </div>
+          <button class="btn btn-dark text-center text-light" onclick="app.weatherController.ToggleUnit()">Toggle Unit (°f/°c)</button>
         </div>
       </div>
     </div>
@@ -49,7 +65,7 @@
     </div>
     <!-- TASK LIST SECTION -->
       <div class="row">
-        <div class="col-12 text-light d-flex justify-content-center ">
+        <div class="col-12 text-light d-flex justify-content-center p-0">
           <form onsubmit="app.taskListController.createTask()">
           <div class="card shadow gradient-custom m-2 px-5 py-2">
             <div class="card-header">
@@ -61,12 +77,17 @@
             </div>
         </div>
         <div class="row justify-content-end m-0 p-0 text-light">
-          <div class="col-lg-3">
-            <div class="card shadow gradient-custom m-0 p-4 ">
+          <div class="col-lg-3 p-0">
+            <div class="card shadow gradient-custom m-0 p-2 ">
+              <h2></h2>
+            </div>
+          </div>
+          <div class="col-lg-3 p-0">
+            <div class="card shadow gradient-custom m-0 p-2 ">
               <div class="card-header">
                 <h5 class="text-center my-2"> Tasks Completed:<h5 class ="text-center"id="checked-vs-not"></h5></h5>
               </div>
-              <div class="card-body scrollable-y" style="max-height: 35vh;">
+              <div class="card-body scrollable-y" style="max-height: 20vh;">
                 <div id="task"></div>
               </div>
             </div>
