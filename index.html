@@ -36,16 +36,26 @@
       <div class="row">
         <div class="col-12 text-light d-flex justify-content-center ">
           <form onsubmit="app.taskListController.createTask()">
-          <div class="card shadow gradient-custom m-2 p-4">
+          <div class="card shadow gradient-custom m-2 px-5 py-2">
             <div class="card-header">
               <h4 class="my-2 text-center"for="task-list">Add To List</><br>
             </div>
             <input type="text" name= "description" placeholder="" minlength="1" maxlength="35" required><br>
             <button type="submit" class="btn btn-dark btn-outline">Add Task</button>
-            <h5 class="text-center my-2"> Tasks Completed:<h5 class ="text-center"id="checked-vs-not"></h5></h5>
           </form>
-          <div id="task"></div>
             </div>
+        </div>
+        <div class="row justify-content-end mt-5 text-light">
+          <div class="col-lg-3">
+            <div class="card shadow gradient-custom m-2 p-4 ">
+              <div class="card-header">
+                <h5 class="text-center my-2"> Tasks Completed:<h5 class ="text-center"id="checked-vs-not"></h5></h5>
+              </div>
+              <div class="card-body scrollable-y" style="max-height: 35vh;">
+                <div id="task"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
