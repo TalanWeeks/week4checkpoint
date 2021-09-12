@@ -19,15 +19,30 @@
   
   </header>
   <main>
-    <!-- CURRENT TIME SECTION -->
     <div class="container-fluid">
+    
+    <!-- WEATHER SECTION -->
+    <div class="row justify-content-end mt-0 text-light">
+      <div class="col-lg-3">
+        <div class="card shadow gradient-custom  p-4 ">
+          <div class="card-header">
+            <h3>Boise Weather:</h3>
+          </div>
+          <div class="card-body scrollable-y" style="max-height: 35vh;">
+            <div id="weather"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CURRENT TIME SECTION -->
         
     <div class="row mt-5">
       <div class="col-12 d-flex justify-content-center text-success">
         <h1 id = "current-date"></h1>        
       </div>
     </div>
-    <div class="row mt-1 mb-5">
+    <div class="row mt-1 mb-3">
       <div class="col-12 d-flex justify-content-center text-success">
         <h1 id = "current-time"></h1>        
       </div>
@@ -45,9 +60,9 @@
           </form>
             </div>
         </div>
-        <div class="row justify-content-end mt-5 text-light">
+        <div class="row justify-content-end m-0 p-0 text-light">
           <div class="col-lg-3">
-            <div class="card shadow gradient-custom m-2 p-4 ">
+            <div class="card shadow gradient-custom m-0 p-4 ">
               <div class="card-header">
                 <h5 class="text-center my-2"> Tasks Completed:<h5 class ="text-center"id="checked-vs-not"></h5></h5>
               </div>
@@ -57,7 +72,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> 
     </main>
   <footer class="bg-dark text-light">
 
