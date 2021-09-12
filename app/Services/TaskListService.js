@@ -15,6 +15,7 @@ class TaskListService{
     console.log('this is your task data',taskData)
     ProxyState.tasks = [...ProxyState.tasks, new Task(taskData)]
     await sandboxApi.post('', taskData)
+    this.getMyTasks()
     console.log("hello from TasksServices", ProxyState.tasks)
   }
 

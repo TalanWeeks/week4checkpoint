@@ -3,6 +3,7 @@ import { taskListService } from "../Services/TaskListService.js";
 import { generateId } from "../Utils/generateId.js";
 
 function _drawTaskList(){  
+  console.log("i shall draw thy tasks")
   let tasks = ProxyState.tasks;
   let taskTemplate = ''
   tasks.forEach(task => taskTemplate += task.taskTemplate)
@@ -11,10 +12,10 @@ function _drawTaskList(){
 export class  TaskListController{
 
   constructor(){
-    ProxyState.on('tasks',_drawTaskList)
+    
     ProxyState.on('tasks',_drawTaskList)
     taskListService.getMyTasks()
-    _drawTaskList()
+    // _drawTaskList()
   }
 
   addTask(){
@@ -38,12 +39,13 @@ export class  TaskListController{
     //@ts-ignore    
     form.reset() 
     _drawTaskList() 
+    
 }
   removeTask(id) { 
   //@ts-ignore
     swal({
-    title: "Are you sure?",
-    text: "Once deleted, you will not be able to recover this task!",
+    title: "Are you done with your chorin?",
+    text: "Better hit cancel if you didn't do you chores",
     icon: "warning",
     buttons: true,
     dangerMode: true,
@@ -52,12 +54,12 @@ export class  TaskListController{
   if (willDelete) {
     taskListService.removeTask(id)
 //@ts-ignore
-    swal("Poof! Your task has been deleted!", {
-      icon: "success",
-    });
+    // swal("Poof! Your task has been deleted!", {
+    //   icon: "success",
+    // });
   } else {
 //@ts-ignore
-    swal("Your task is safe!");
+    swal("Sorry cheater no take backs...");
   }
     })
   }
