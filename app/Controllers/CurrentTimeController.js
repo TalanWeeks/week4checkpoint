@@ -3,10 +3,8 @@ import { currentTimeService } from "../Services/CurrentTimeService.js";
 
 
 export class CurrentTimeController{
-
   constructor(){
     currentTimeService.getCurrentTime()
-    setInterval(currentTimeService.getCurrentTime, 15000)
-  }
-  
+    setInterval(currentTimeService.getCurrentTime, 1000)
+  }  
 }

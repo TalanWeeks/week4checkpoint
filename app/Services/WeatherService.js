@@ -1,7 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { Weather } from "../Models/Weather.js"
 
-
 // @ts-ignore
 const sandboxApi = axios.create({
   baseURL: 'https://bcw-sandbox.herokuapp.com/api/weather'
@@ -11,7 +10,6 @@ class WeatherService{
   
   async getWeatherInfo() {
     let res = await sandboxApi.get('')
-
     console.log('this is the weather data mi lord',res.data)
 
     ProxyState.weather = Object.values(res.data.main)
@@ -20,7 +18,6 @@ class WeatherService{
     this._displayTempFahr() 
 
   }
-
   toggleUnit(){
     ProxyState.weather[6] = !ProxyState.weather[6]
     console.log(ProxyState.weather[6])
@@ -28,8 +25,7 @@ class WeatherService{
       this._displayTempCelsius()
     } else{
       this._displayTempFahr() 
-    }
-    
+    }    
   }
 
   _displayTempFahr(){
@@ -57,6 +53,5 @@ class WeatherService{
     document.getElementById("temp-high").innerText = " " + tempHigh.toString() + " °c"
     document.getElementById("temp-low").innerText = " " + tempLow.toString() + " °c"
   }
-
 }
 export const weatherService = new WeatherService

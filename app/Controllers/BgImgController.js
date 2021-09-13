@@ -1,8 +1,7 @@
 import { ProxyState } from "../AppState.js";
 import { apiService } from "../Services/ApiService.js";
 
-export class BgImgController{
-  
+export class BgImgController{  
   _drawBgImg(){    
     document.getElementById("bg-img").style.backgroundImage = `url('${ProxyState.img}')`
   }
@@ -10,5 +9,4 @@ export class BgImgController{
     apiService.getImgData()
     ProxyState.on('img', this._drawBgImg)
   }
-
 }

@@ -1,14 +1,11 @@
 import { ProxyState } from "../AppState.js"
 import { Task } from "../Models/Task.js"
 
-
 // @ts-ignore
 const sandboxApi = axios.create({
   baseURL: 'https://bcw-sandbox.herokuapp.com/api/talan/todos'
 })
-class TaskListService{
-
- 
+class TaskListService{ 
   async addTask(taskData){
     console.log('this is your task data',taskData)
     ProxyState.tasks = [...ProxyState.tasks, new Task(taskData)]
@@ -23,24 +20,18 @@ class TaskListService{
     this.checkedVsUnchecked() 
   }
 
-  async removeTask(id) {
-    //TODO Send the id to be deleted from the server then update the store
-   
+  async removeTask(id) {    
     try {
       await sandboxApi.delete(id)      
     } catch (error) {
       console.log("delete failed",error);
     }
-    ProxyState.tasks = ProxyState.tasks.filter(t => t._id !== id)
-    // this.getMyTasks()
+    ProxyState.tasks = ProxyState.tasks.filter(t => t._id !== id)    
     ProxyState.checkedTasks = ProxyState.tasks.filter((tasks) => {return tasks.completed == true})
-
-    this.checkedVsUnchecked()
-          
+    this.checkedVsUnchecked()          
     }
 
-    async checkTasks(taskId){
-      
+    async checkTasks(taskId){      
       console.log('the task id',taskId)
       const task = ProxyState.tasks.find(t => t._id === taskId)
       console.log("task after found id",task)
@@ -61,5 +52,4 @@ class TaskListService{
       document.getElementById("checked-vs-not").innerText = checkedTasks + "/" + uncheckTasks
     }
 }
-
 export const taskListService = new TaskListService

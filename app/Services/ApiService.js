@@ -6,14 +6,10 @@ const sandboxApi = axios.create({
 })
 
 class ApiService{  
-
   async getImgData(){
     let res = await sandboxApi.get('images')
     console.log('your',res)
-    ProxyState.img = res.data.largeImgUrl
-    
+    ProxyState.img = res.data.largeImgUrl    
   }
-
 }
-
 export const apiService = new ApiService()

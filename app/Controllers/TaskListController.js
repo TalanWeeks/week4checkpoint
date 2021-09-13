@@ -11,37 +11,30 @@ function _drawTaskList(){
   taskListService.checkedVsUnchecked()
 }
 export class  TaskListController{
-
-  constructor(){
-    
+  constructor(){    
     ProxyState.on('tasks',_drawTaskList)
-    taskListService.getMyTasks()
-    
-    // _drawTaskList()
+    taskListService.getMyTasks()       
   }
 
   addTask(){
-      //@ts-ignore
+    //@ts-ignore
     taskListService.addTask(taskData)}
 
   createTask(listId){      
     event.preventDefault()
-    let form = event.target
-    
+    let form = event.target    
     let taskData = {
       //@ts-ignore
       name: form.name.value,
       id: listId,
       //@ts-ignore
       description: form.description.value,
-      completed: false 
-      
+      completed: false       
     }
     taskListService.addTask(taskData)
     //@ts-ignore    
     form.reset() 
-    _drawTaskList() 
-    
+    _drawTaskList()     
 }
   removeTask(id) { 
   //@ts-ignore
@@ -54,19 +47,13 @@ export class  TaskListController{
     })
     .then((willDelete) => {
   if (willDelete) {
-    taskListService.removeTask(id)
-//@ts-ignore
-    // swal("Poof! Your task has been deleted!", {
-    //   icon: "success",
-    // });
+    taskListService.removeTask(id)   
   } else {
 //@ts-ignore
     swal("Sorry cheater no take backs...");
   }
     })
   }
-
   checkTasks(taskId){
     taskListService.checkTasks(taskId)}
-
 }
